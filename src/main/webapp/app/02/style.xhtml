@@ -8,42 +8,87 @@
     <title>Facelet Title</title>
   </h:head>
   <h:body>
-    <p:outputLabel value="スタイル画面デザインをテストするよ" />
-    <p:separator />
-    <p:panel header="入力欄その１" toggleable="true" style="width: 1024px;">
-      <p:panelGrid styleClass="ui-panelgrid-blank">
-        <f:facet name="header">
-          <p:outputLabel value="通常入力項目" />
-        </f:facet>
-        <p:row>
-          <p:column width="16%">
+    <div style="width: 1024px;">
+      
+      <p:hotkey bind="Enter" handler="event.keyCode = 9;" />
+
+      <p:outputLabel value="スタイル画面デザインをテストするよ" />
+      <p:separator />
+      <p:panel header="入力欄その１" toggleable="true">
+        <p:panelGrid layout="grid" columns="6" styleClass="ui-panelgrid-blank" style="witdh: 960px;">
+          <f:facet name="header">
+            <p:outputLabel value="通常入力項目" />
+          </f:facet>
+          <p:column>
             <p:outputLabel value="文字列：" />
           </p:column>
-          <p:column width="17%">
-            <p:inputText size="20" />
+          <p:column>
+            <p:inputText size="10" />
           </p:column>
-          <p:column width="16%">
+          <p:column>
             <p:outputLabel value="マスク：" />
           </p:column>
-          <p:column width="17%">
+          <p:column>
             <p:inputMask size="5" mask="#,###" />
           </p:column>
-          <p:column width="16%">
+          <p:column>
             <p:outputLabel value="カレンダー：" />
           </p:column>
-          <p:column width="17%">
+          <p:column>
             <p:calendar mode="popup" />
           </p:column>
-        </p:row>
-      </p:panelGrid>
-    </p:panel>
-    <p:panel header="入力欄その２" toggleable="true" style="width: 1024px;">
-      <p:panelGrid styleClass="ui-panelgrid-blank">
-        <f:facet name="header">
-          <p:outputLabel value="グリッド入力項目" />
-        </f:facet>
-      </p:panelGrid>
-    </p:panel>
+          
+          <p:column>
+            <p:outputLabel value="長文文字列：" />
+          </p:column>
+          <p:column>
+            <p:inputText size="70" />
+          </p:column>
+          <p:column />
+          <p:column />
+          <p:column>
+            <p:outputLabel value="チェック：" />
+          </p:column>
+          <p:column>
+            <p:selectManyCheckbox>
+              <f:selectItem itemLabel="俺" itemValue="0" />
+              <f:selectItem itemLabel="あたし" itemValue="1" />
+            </p:selectManyCheckbox>
+          </p:column>
+        </p:panelGrid>
+      </p:panel>
+      <p:separator />
+      <p:panel header="入力欄その２" toggleable="true">
+        <p:panelGrid styleClass="ui-panelgrid-blank">
+          <f:facet name="header">
+            <p:outputLabel value="グリッド入力項目" />
+          </f:facet>
+          <p:dataTable var="master" value="#{master01Db.findAll}">
+            <p:column>
+              <h:outputText value="#{master.id}" />
+            </p:column>
+            <p:column>
+              <h:outputText value="#{master.text}" />
+            </p:column>
+            <p:column>
+              <h:outputText value="#{master.flag1}" />
+            </p:column>
+            <p:column>
+              <h:outputText value="#{master.flag2}" />
+            </p:column>
+            <p:column>
+              <h:outputText value="#{master.update_user}" />
+            </p:column>
+            <p:column>
+              <h:outputText value="#{master.update_datetime}" />
+            </p:column>
+            <p:column>
+              <h:outputText value="#{master.create_datetime}" />
+            </p:column>
+          </p:dataTable>
+        </p:panelGrid>
+      </p:panel>
+    </div>
   </h:body>
 </html>
 
