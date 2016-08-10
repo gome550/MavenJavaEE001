@@ -7,39 +7,55 @@
   <h:head>
     <title>Facelet Title</title>
   </h:head>
-  
+
   <h:body>
-      <p:panel header="入力欄その２" toggleable="true">
-        <p:panelGrid styleClass="ui-panelgrid-blank">
+    <p:panel header="データテーブル">
+      <p:dataTable var="master" value="#{master01Bean.allMaster01}">
+        <p:column>
           <f:facet name="header">
-            <p:outputLabel value="グリッド入力項目" />
+            <h:outputText value="ID" />
           </f:facet>
-          <p:dataTable var="master" value="#{master01Db.findAll}">
-            <p:column>
-              <h:outputText value="#{master.id}" />
-            </p:column>
-            <p:column>
-              <h:outputText value="#{master.text}" />
-            </p:column>
-            <p:column>
-              <h:outputText value="#{master.flag1}" />
-            </p:column>
-            <p:column>
-              <h:outputText value="#{master.flag2}" />
-            </p:column>
-            <p:column>
-              <h:outputText value="#{master.update_user}" />
-            </p:column>
-            <p:column>
-              <h:outputText value="#{master.update_datetime}" />
-            </p:column>
-            <p:column>
-              <h:outputText value="#{master.create_datetime}" />
-            </p:column>
-          </p:dataTable>
-        </p:panelGrid>
-      </p:panel>
+          <h:outputText value="#{master.id}" />
+        </p:column>
+        <p:column>
+          <f:facet name="header">
+            <h:outputText value="TEXT" />
+          </f:facet>
+          <h:outputText value="#{master.text}" />
+        </p:column>
+        <p:column>
+          <f:facet name="header">
+            <h:outputText value="FLAG1" />
+          </f:facet>
+          <h:outputText value="#{master.flag1}" />
+        </p:column>
+        <p:column>
+          <f:facet name="header">
+            <h:outputText value="FLAG2" />
+          </f:facet>
+          <h:outputText value="#{master.flag2}" />
+        </p:column>
+        <p:column>
+          <f:facet name="header">
+            <h:outputText value="UPDATE USER" />
+          </f:facet>
+          <h:outputText value="#{master.updateUser}" />
+        </p:column>
+        <p:column>
+          <f:facet name="header">
+            <h:outputText value="UPDATE DATETIME" />
+          </f:facet>
+          <h:outputText value="#{master.updateDatetime}" />
+        </p:column>
+        <p:column>
+          <f:facet name="header">
+            <h:outputText value="CREATE DATETIME" />
+          </f:facet>
+          <h:outputText value="#{master.createDatetime}" />
+        </p:column>
+      </p:dataTable>
+    </p:panel>
   </h:body>
-  
+
 </html>
 
