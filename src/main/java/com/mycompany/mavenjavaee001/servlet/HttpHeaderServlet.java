@@ -39,7 +39,8 @@ public class HttpHeaderServlet extends HttpServlet {
 	    out.println("<!DOCTYPE html>");
 	    out.println("<html>");
 	    out.println("<head>");
-	    out.println("<title>Servlet HttpHeaderServlet</title>");	    
+	    out.println("<title>Servlet HttpHeaderServlet</title>");
+	    out.println("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=8\" />");
 	    out.println("</head>");
 	    out.println("<body>");
 	    out.println("<h1>Servlet HttpHeaderServlet at " + request.getContextPath() + "</h1>");
@@ -69,6 +70,38 @@ public class HttpHeaderServlet extends HttpServlet {
 	    
 	    out.println("</body>");
 	    out.println("</html>");
+
+//	    out.println("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>");
+//	    out.println("<!DOCTYPE html>");
+	    
+//	    out.println("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">");
+//	    out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\">");
+//	    out.println("<head>");
+//	    out.println("<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\" />");
+//	    out.println("<title>SAMPLE</title>");
+//	    out.println("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=7\" />");
+//	    out.println("<style type=\"text/css\">");
+//	    out.println("body {");
+//	    out.println("  margin-top: 30px;");
+//	    out.println("}");
+//	    out.println("div {");
+//	    out.println("  background-color: yellow;");
+//	    out.println("  width: 200px;");
+//	    out.println("  line-height: 50px;");
+//	    out.println("  text-align: center;");
+//	    out.println("  font-size: 2em;");
+//	    out.println("}");
+//	    out.println("");
+//	    out.println("div {");
+//	    out.println("  outline: solid 10px limegreen;");
+//	    out.println("  margin: auto;");
+//	    out.println("}");
+//	    out.println("</style>");
+//	    out.println("</head>");
+//	    out.println("<body>");
+//	    out.println("<div>HELLO</div>");
+//	    out.println("</body>");
+//	    out.println("</html>");
 	}
     }
     
