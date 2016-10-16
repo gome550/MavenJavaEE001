@@ -4,10 +4,24 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui">
   <h:head>
-    <title>Facelet Title</title>
+    <title>Calenar</title>
+    <h:outputScript library="js" name="locale.js" />
   </h:head>
   <h:body>
-    <p:calendar mode="popup" />
+    <h:form>
+      <p:calendar id="calendar" mode="popup" pattern="yyyy.MM.dd" locale="ja" value="#{calendarBean.calendar}" />
+      <p:commandButton id="ose" actionListener="#{calendarBean.onOsePush}" update="wareki longValue" value="押せ" /><br />
+      <br />
+      <p:outputLabel id="wareki" value="#{calendarBean.wareki}" /><br />
+      Long値:<p:outputLabel id="longValue" value="#{calendarBean.longValue}" /><br />
+      <br />
+      <br/>
+      Long値:<p:inputNumber id="inputLongValue" value="#{calendarBean.inputLongValue}" />
+      <p:commandButton id="ose2" actionListener="#{calendarBean.onOse2Push}" update="seireki wareki2" value="押せ" /><br />
+      <br />
+      <p:outputLabel id="seireki" value="#{calendarBean.seireki}" /><br />
+      <p:outputLabel id="wareki2" value="#{calendarBean.wareki2}" /><br />
+    </h:form>
   </h:body>
 </html>
 
